@@ -2,7 +2,7 @@ import {useState} from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 
-const noteMap = {
+const noteMap: {[key: string]: string[]} = {
   '8': ['1', 'a', '2', 'a', '3', 'a', '4', 'a'],
   '16': [
     '1',
@@ -54,7 +54,7 @@ function App() {
         <option value="16">16</option>
       </select>
       <div className="Note">
-        {noteMap[type].map((label: string, index: number) => (
+        {noteMap[type].map((label, index) => (
           <Beat
             label={label}
             key={`${type}${index}`}
